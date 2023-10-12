@@ -1,0 +1,57 @@
+<div class="buscador">
+    <button><i class="fa-solid fa-magnifying-glass" style="color: #d9f9f9;"></i>  Buscar Articulo</button>
+    <input type="text" placeholder="Codigo del articulo"> 
+    <button (click)="agregar();"><i class="fa-solid fa-circle-plus" style="color: #d9f9f9;"></i>  Agregar Articulo</button>
+</div>
+<div class="tableData">
+    <table class="mainData">
+        <thead>
+            <tr>
+              <th>Id Compilado</th>
+              <th>Oficina</th>
+              <th>Area</th>
+              <th>Codigo Programa</th>
+              <th>Codigo Subpartida</th>
+              <th>Codigo Articulo</th>
+              <th>Cantidad</th>
+              <th>Costo Unidad</th>
+              <th>Monto total</th>
+              <th colspan="2">Descripción</th>
+              <th>Ejecución</th>
+              <th>Prioridad</th>
+              <th>Tipo Tramite</th>
+              <th>Numero Contrato</th>
+              <th>Certificación</th>
+              <th>Numero SC UC/UA</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dato of datos.response">
+                <td>{{ dato.idCompilado }}</td>
+                <td>{{ dato.oficina }}</td>
+                <td>{{ dato.area }}</td>
+                <td>{{ dato.codigoPrograma }}</td>
+                <td>{{ dato.codigoSubpartida }}</td>
+                <td>{{ dato.oProductos?.codigoArticulo }}</td>
+                <td>{{ dato.oProductos?.cantidad }}</td>
+                <td>{{ dato.oProductos?.costoUnitario }}</td>
+                <td>{{ dato.oProductos?.montoTotal }}</td>
+                <td colspan="2">{{ dato.oProductos?.descripcion }}</td>
+                <td>{{ dato.periodoEjecucion }}</td>
+                <td>{{ dato.prioridad }}</td>
+                <td>{{ dato.tipoTramite }}</td>
+                <td>{{ dato.numeroContratoVigente }}</td>
+                <td>{{ dato.requisionCertificacion }}</td>
+                <td>{{ dato.numeroScUcUa }}</td>
+                <td>
+                    <button><i class="fa-solid fa-trash"></i></button>
+                    <button> <i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>
+                    
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+

@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 10000px;
+}
+body{
+    background-image: url(./assets/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+:root{
+    font-size: 15px;
+    letter-spacing: 0.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+@media  screen and (max-width:550px) {
+    html{
+        height: 800px;
+    }
+    
+}
