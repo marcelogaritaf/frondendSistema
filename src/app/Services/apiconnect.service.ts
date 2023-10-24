@@ -7,8 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class ApiconnectService {
   AppUrl="http://localhost:5274/";
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient ) {
+  }
   //metodo get 
+  ObtenerArticulos(){
+    return this.http.get(this.AppUrl+"api/Productos/rutaApi");
+  }
   // Obtener(){
   //   this.http.get(this.AppUrl+"api/Compilado/Compilado").subscribe(data=>{
       
@@ -18,5 +22,4 @@ export class ApiconnectService {
   ObtenerDatos(): Observable<any> {
     return this.http.get(this.AppUrl+"api/Compilado/Compilado");
   }
-
 }

@@ -1,0 +1,24 @@
+mat-form-field {
+    width: 650px;
+    font-size: 20px;
+    margin-left: 250px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+button{
+    padding: 18px;
+    margin-left: 30px;
+    position: absolute;
+    background-color: rgb(11, 87, 117);
+    width: 200px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button a{
+    color:  rgb(217, 249, 249);
+    text-decoration: none;
+}
+button a i{
+    margin-right: 5px;
+}

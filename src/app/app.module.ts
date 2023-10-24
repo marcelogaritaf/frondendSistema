@@ -11,6 +11,13 @@ import { HomeCompomentComponent } from './home-compoment/home-compoment.componen
 import { DesignadasComponent } from './designadas/designadas.component';
 import { OficiniasComponent } from './oficinias/oficinias.component';
 import { RegistroAsignarComponent } from './home-compoment/registro-asignar/registro-asignar.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
@@ -34,7 +41,13 @@ const sistemaRoutes:Routes=[
     AppRoutingModule, RouterModule.forRoot(sistemaRoutes),//indica las rutas del sistema
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
