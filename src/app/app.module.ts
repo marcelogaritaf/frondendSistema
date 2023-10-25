@@ -17,6 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilado.component';
 
 
 const sistemaRoutes:Routes=[
@@ -34,7 +36,8 @@ const sistemaRoutes:Routes=[
     AsignarComponent,
     OficiniasComponent,
     DesignadasComponent,
-    RegistroAsignarComponent
+    RegistroAsignarComponent,
+    AddcompiladoComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ const sistemaRoutes:Routes=[
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

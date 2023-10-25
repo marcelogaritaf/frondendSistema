@@ -1,0 +1,37 @@
+<div class="form-container">
+    <!-- <h2>Agregar Campos</h2> -->
+    <img src="../../../assets/logo2.png" alt="logo referencia">
+    <div class="form">
+        <form class="form" [formGroup]="form" (ngSubmit)="agregarDatos()">
+            <div class="column1">
+                <label>Id Compilado:</label> <br>
+                <input type="text" formControlName="idCompilado" placeholder="Id del Compilado"> <br>
+                <label>Oficina:</label> <br>
+                <input type="text" formControlName="oficina" placeholder="Nombre de Oficina"> <br>
+                <label>Area:</label> <br>
+                <input type="text"  formControlName="area" placeholder="Nombre del Area"> <br>
+                <label>Codigo Programa:</label> <br>
+                <input type="text" formControlName="codigoPrograma" placeholder="Codigo del Programa"> <br>
+                <label>Codigo Subpartida:</label> <br>
+                <input type="text" formControlName="codigoSubpartida" placeholder="Codigo de Subpartida"> <br>
+                <label>Id Articulo:</label> <br>
+                <input type="text" formControlName="idArticulo" placeholder="Id de articulo"> <br>
+                <label>Periodo de Ejecución:</label> <br>
+                <input type="text" formControlName="periodo" placeholder="Periodo Ejecución"> <br>
+            </div>
+            <div class="column2">
+                <label>Prioridad:</label> <br>
+                <input type="text" formControlName="prioridad" placeholder="Prioridad"> <br>
+                <label>Tipo Tramite:</label> <br>
+                <input type="text" formControlName="tipoTramite" placeholder="Tipo de Tramite"> <br>
+                <label>Numero de Contrato Vigente:</label> <br>
+                <input type="text" formControlName="nContrato" placeholder="Numero de Contrato Vigente"> <br>
+                <label>Certificación:</label> <br>
+                <input type="text" formControlName="certificacion" placeholder="Certificación"> <br>
+                <label>Numero SC UC/UA:</label> <br>
+                <input type="text" formControlName="nSCuCuA" placeholder="Numero SC UC/UA"> <br>
+                <button type="submit" [disabled]="form.invalid">Agregar</button>
+            </div>
+        </form>   
+    </div>
+</div>

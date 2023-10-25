@@ -7,10 +7,10 @@
     padding: 0;
 }
 html{
-    height: 10000px;
+    height: 1500px;
 }
 body{
-    background-image: url(./assets/background.svg);
+    background-image: url(./assets/diamond-sunset.svg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;

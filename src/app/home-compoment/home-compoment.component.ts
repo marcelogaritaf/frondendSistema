@@ -8,11 +8,15 @@ import { ApiconnectService } from '../Services/apiconnect.service';
   styleUrls: ['./home-compoment.component.css']
 })
 export class HomeCompomentComponent implements OnInit{
+  p:number=1;
   datos:any=null;
   constructor(private router: Router, private service: ApiconnectService){
 
   }
   ngOnInit(): void {
+    this.cargaDatos();
+  }
+  cargaDatos(){
     this.service.ObtenerDatos().subscribe(result=>{
       console.log(result)
       this.datos=result;
@@ -22,7 +26,7 @@ export class HomeCompomentComponent implements OnInit{
    
   }
   agregar(){
-    this.router.navigate(['/Boletin'])
+    this.router.navigate(['/AgregarDato'])
   }
 }
 
