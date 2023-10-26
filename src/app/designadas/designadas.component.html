@@ -1,1 +1,44 @@
-<p>designadas works!</p>
+<div class="buscador">
+    <button><i class="fa-solid fa-magnifying-glass" style="color: #d9f9f9;"></i>  Buscar Articulo</button>
+    <input type="text" placeholder="Codigo del articulo"> 
+</div>
+<div class="tableData">
+    <table class="mainData">
+        <thead>
+            <tr>
+              <th>Id Asignado</th>
+              <th>Id Compilado</th>
+              <th>Nombre Articulo</th>
+              <th>Oficina</th>
+              <th>Nombre Usuario</th>
+              <th>Estado</th>
+              <th colspan="2">Correo Electronico</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Final</th>
+              <th>Monto Total</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
+                <td>{{ dato.idAsignados }}</td>
+                <td>{{ dato.idCompilado }}</td>
+                <td>{{ dato.oProductos?.articulo }}</td>
+                <td>{{ dato.oCompilado?.oficina }}</td>
+                <td>{{ dato.nombreUsuario}}</td>
+                <td>{{ dato.estado }}</td>
+                <td colspan="2">{{ dato.correoElectronico }}</td>
+                <td>{{ dato.fechaInicio }}</td>
+                <td>{{ dato.fechaFin}}</td>
+                <td>{{ dato.oProductos?.montoTotal }}</td>
+                <td>
+                    <button ><i class="fa-solid fa-trash"></i></button>
+                    <button > <i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>  
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+</div>
+
