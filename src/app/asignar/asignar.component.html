@@ -1,1 +1,27 @@
-<p>asignar works!</p>
+<div class="form-container">
+    <!-- <h2>Agregar Campos</h2> -->
+    <img src="../../../assets/logo2.png" alt="logo referencia">
+    <div class="form" >
+        <form class="form" [formGroup]="form" (ngSubmit)="agregarAsignaciones()">
+            <div class="column1">
+                <label>Id Compilado:</label> <br>
+                <input type="text" formControlName="idCompilado" placeholder="Id de compilado"> <br>
+                <label>Id Articulo:</label> <br>
+                <input type="text" formControlName="idArticulo" placeholder="Id de articulo"> <br>
+                <label>Estado:</label> <br>
+                <input type="text"  formControlName="estado" placeholder="Estado de compra"> <br>
+                <label>Fecha inicio:</label> <br>
+                <input type="text" formControlName="fechaInicio" placeholder="Fecha de inicio"> <br>
+            </div>
+            <div class="column2">
+                <label>Fecha Final:</label> <br>
+                <input type="text" formControlName="fechaFinal" placeholder="Fecha de finalización"> <br>
+                <label>Nombre Usuario:</label> <br>
+                <input type="text" formControlName="nombreUsuario" placeholder="Nombre de Usuario"> <br>
+                <label>Correo Electronico:</label> <br>
+                <input type="text" formControlName="correo" placeholder="Correo Electronico"> <br>
+                <button type="submit" [disabled]="form.invalid">Agregar</button>         
+            </div>
+        </form>   
+    </div>
+</div>
