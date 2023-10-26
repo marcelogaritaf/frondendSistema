@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilado.component';
-
+import { ToastrModule } from 'ngx-toastr';
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
@@ -51,7 +51,8 @@ const sistemaRoutes:Routes=[
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
