@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ApiconnectService } from 'src/app/Services/apiconnect.service';
 import { CompiladoModels } from 'src/app/models/compiladoModels';
 @Component({
@@ -9,9 +10,9 @@ import { CompiladoModels } from 'src/app/models/compiladoModels';
 })
 export class AddcompiladoComponent {
   form: FormGroup;
-  constructor(private formBuilder:FormBuilder, private service:ApiconnectService){
+  constructor(private formBuilder:FormBuilder, private service:ApiconnectService, private toast:ToastrService){
     this.form = this.formBuilder.group({
-      idCompilado: ['', [Validators.required]],
+      idCompilado: 0,
       oficina: ['', [Validators.required]],
       area: ['', [Validators.required]],
       codigoPrograma: ['', [Validators.required]],
@@ -20,29 +21,28 @@ export class AddcompiladoComponent {
       periodo: ['', [Validators.required]],
       prioridad: ['', [Validators.required]],
       tipoTramite: ['', [Validators.required]],
-      nContrato: [''],
-      certificacion: [''],
-      nSCuCuA: [''],
+      nContrato: ['',],
+      certificacion: ['',],
+      nSCuCuA: ['',]
     })
   }
 
   agregarDatos(){
-   const formData:CompiladoModels={
-    ID_Compilado: this.form.get('idCompilado')?.value,
-     Oficina: this.form.get('oficina')?.value,
-     Area: this.form.get('area')?.value,
-     Codigo_Programa: this.form.get('codigoPrograma')?.value,
-     Codigo_Subpartida: this.form.get('codigoSubpartida')?.value,
-     ID_Productos: this.form.get('idArticulo')?.value,
-     Periodo_Ejecucion: this.form.get('periodo')?.value,
-     Prioridad: this.form.get('prioridad')?.value,
-     Tipo_Tramite: this.form.get('tipoTramite')?.value,
-     Numero_Contrato_Vigente: this.form.get('nContrato')?.value,
-     Requision_Certificacion: this.form.get('certificacion')?.value,
-     Numero_SC_UC_UA: this.form.get('nSCuCuA')?.value
+   const formData:any={
+    oficina: this.form.get('oficina')?.value,
+    area: this.form.get('area')?.value,
+    codigoPrograma: this.form.get('codigoPrograma')?.value,
+    codigoSubpartida: this.form.get('codigoSubpartida')?.value,
+    idProductos: this.form.get('idArticulo')?.value,
+    periodoEjecucion: this.form.get('periodo')!.value,
+    prioridad: this.form.get('prioridad')?.value,
+    tipoTramite: this.form.get('tipoTramite')?.value,
+    numeroContratoVigente: this.form.get('nContrato')!.value,
+    requisionCertificacion: this.form.get('certificacion')!.value,
+    numeroScUcUa: this.form.get('nSCuCuA')!.value
    }
    this.service.addData(formData).subscribe(result=>{
-     console.log('guardado bien')
+     this.toast.success('Dato agregado', 'Los datos han sido agregados correctamente');
      this.form.reset();
    })
     console.log(this.form)
