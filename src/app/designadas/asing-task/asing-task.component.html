@@ -1,0 +1,12 @@
+<div class="form-container">
+    <img src="../../../assets/logo2.png" alt="logo referencia">
+    <div class="form" [formGroup]="datos">
+            <label>Correo Destinatario:</label> <br>
+            <input type="text" name="Correo" id="Correo" placeholder="Correo Electronico" formControlName="correo"><br>
+            <label>Asunto:</label> <br>
+            <input type="text" name="Correo" id="asunto" placeholder="Asunto" formControlName="asunto"><br>
+            <label>Mensaje:</label><br>
+            <textarea name="Correo" id="mensaje" placeholder="Mensaje" formControlName="mensaje"></textarea><br>
+            <button type="button" (click)="enviarCorreo()">Enviar</button>
+    </div>
+</div>
