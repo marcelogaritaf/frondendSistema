@@ -32,6 +32,9 @@ export class ApiconnectService {
   eliminarData(idProductos:number): Observable<any>{
     return this.http.delete(this.AppUrl+"api/Compilado/Eliminar/"+idProductos)
   }
+  eliminarAsig(idAsignados:number): Observable<any>{
+    return this.http.delete(this.AppUrl+"api/Asignados/Eliminar/"+idAsignados);
+  }
   actualizar(data: any){
     this.actulizarData.next(data);
   }

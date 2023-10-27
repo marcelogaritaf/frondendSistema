@@ -32,9 +32,9 @@
                 <td>{{ dato.fechaFin}}</td>
                 <td>{{ dato.oProductos?.montoTotal }}</td>
                 <td>
-                    <button ><i class="fa-solid fa-trash"></i></button>
+                    <button (click)="eliminarAsignaciones(dato.idAsignados)"><i class="fa-solid fa-trash"></i></button>
                     <button > <i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>  
+                    <button (click)="campo(dato)" class="link" (click)="ruta()"><i class="fa-solid fa-share"></i></button>  
                 </td>
             </tr>
         </tbody>

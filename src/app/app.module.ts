@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilado.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AsingTaskComponent } from './designadas/asing-task/asing-task.component';
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
@@ -38,6 +39,7 @@ const sistemaRoutes:Routes=[
     DesignadasComponent,
     RegistroAsignarComponent,
     AddcompiladoComponent,
+    AsingTaskComponent,
   ],
   imports: [
     BrowserModule,
