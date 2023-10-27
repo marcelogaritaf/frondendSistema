@@ -20,6 +20,9 @@ export class ApiconnectService {
   ObtenerDatos(): Observable<any> {
     return this.http.get(this.AppUrl+"api/Compilado/Compilado");
   }
+  ObtenerDatosByQuery(id:number):Observable<any>{
+    return this.http.get<any>(this.AppUrl+"api/Compilado/Obtener/"+id)
+  }
   ObtenerAsig(): Observable<any>{
     return this.http.get(this.AppUrl+"api/Asignados/Obtener")
   }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiconnectService } from '../Services/apiconnect.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-home-compoment',
@@ -11,12 +13,26 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeCompomentComponent implements OnInit{
   p:number=1;
   datos:any=null;
-  constructor(private router: Router, private service: ApiconnectService, private toast:ToastrService){
+  // controlform=this.fb.nonNullable.group({
+  //   id:1
+  // });
+  constructor(private router: Router, private service: ApiconnectService, private toast:ToastrService, private fb:FormBuilder){
 
   }
   ngOnInit(): void {
     this.cargaDatos();
+    // this.fectData();
+
   }
+  // fectData():void{
+  //   const id=this.controlform.value.id ?? 1
+  //   this.service.ObtenerDatosByQuery(id).subscribe(result=>{
+  //     this.datos=result;
+  //   })
+  // }
+  // buscador():void{
+  //   this.fectData();
+  // }
   cargaDatos(){
     this.service.ObtenerDatos().subscribe(result=>{
       console.log(result)
