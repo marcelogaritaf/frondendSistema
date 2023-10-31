@@ -7,44 +7,56 @@
     <table class="mainData">
         <thead>
             <tr>
-              <th>Id Compilado</th>
-              <th>Oficina</th>
-              <th>Area</th>
-              <th>Codigo Programa</th>
-              <th>Codigo Subpartida</th>
-              <th>Codigo Articulo</th>
-              <th>Cantidad</th>
-              <th>Costo Unidad</th>
-              <th>Monto total</th>
-              <th colspan="2">Descripción</th>
-              <th>Ejecución</th>
-              <th>Prioridad</th>
-              <th>Tipo Tramite</th>
-              <th>Numero Contrato</th>
-              <th>Certificación</th>
-              <th>Numero SC UC/UA</th>
-              <th>Acciones</th>
+              <th>Id</th>
+              <th colspan="2">Oficina</th>
+              <th colspan="2">Area</th>
+              <th colspan="3">Codigo Programa</th>
+              <th colspan="3">Codigo Subpartida</th>
+              <th colspan="3">Articulo</th>
+              <th colspan="2">Codigo Articulo</th>
+              <th colspan="2">Cantidad</th>
+              <th colspan="2">Costo Unidad</th>
+              <th colspan="2">Monto total</th>
+              <th colspan="2">Monto Modificar</th>
+              <th colspan="2">Monto Real</th>
+              <th colspan="5">Descripción</th>
+              <th colspan="2">Fase</th>
+              <th colspan="2">Ejecución</th>
+              <th colspan="2">Prioridad</th>
+              <th colspan="5">Observaciones</th>
+              <th colspan="2">Tipo Tramite</th>
+              <th colspan="2">Numero Contrato</th>
+              <th colspan="3">Certificación</th>
+              <th colspan="2">Numero SC UC/UA</th>
+              <th colspan="2">Periodo</th>
+              <th colspan="2">Acciones</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
                 <td>{{ dato.idCompilado }}</td>
-                <td>{{ dato.oficina }}</td>
-                <td>{{ dato.area }}</td>
-                <td>{{ dato.codigoPrograma }}</td>
-                <td>{{ dato.codigoSubpartida }}</td>
-                <td>{{ dato.oProductos?.codigoArticulo }}</td>
-                <td>{{ dato.oProductos?.cantidad }}</td>
-                <td>{{ dato.oProductos?.costoUnitario }}</td>
-                <td>{{ dato.oProductos?.montoTotal }}</td>
-                <td colspan="2">{{ dato.oProductos?.descripcion }}</td>
-                <td>{{ dato.periodoEjecucion }}</td>
-                <td>{{ dato.prioridad }}</td>
-                <td>{{ dato.tipoTramite }}</td>
-                <td>{{ dato.numeroContratoVigente }}</td>
-                <td>{{ dato.requisionCertificacion }}</td>
-                <td>{{ dato.numeroScUcUa }}</td>
-                <td>
+                <td colspan="2">{{ dato.oficina }}</td>
+                <td colspan="2">{{ dato.area }}</td>
+                <td colspan="3">{{ dato.codigoPrograma }}</td>
+                <td colspan="3">{{ dato.codigoSubpartida }}</td>
+                <td colspan="3">{{dato.articulo}}</td>
+                <td colspan="2">{{ dato.codigoArticulo }}</td>
+                <td colspan="2">{{ dato.cantidad }}</td>
+                <td colspan="2">{{ dato.costoUnitario }}</td>
+                <td colspan="2">{{ dato.montoTotal }}</td>
+                <td colspan="2">{{dato.montoModificar}}</td>
+                <td colspan="2">{{dato.montoReal}}</td>
+                <td colspan="5">{{ dato.descripcion }}</td>
+                <td colspan="2">{{dato.estado}}</td>
+                <td colspan="2">{{ dato.periodoEjecucion }}</td>
+                <td colspan="2">{{ dato.prioridad }}</td>
+                <td colspan="5">{{dato.observaciones}}</td>
+                <td colspan="2">{{ dato.tipoTramite }}</td>
+                <td colspan="2">{{ dato.numeroContratoVigente }}</td>
+                <td colspan="3">{{ dato.requisionCertificacion }}</td>
+                <td colspan="2">{{ dato.numeroScUcUa }}</td>
+                <td colspan="2">{{dato.periodo}}</td>
+                <td colspan="2">
                     <button (click)="eliminar(dato.idCompilado)"><i class="fa-solid fa-trash"></i></button>
                     <button (click)="agregar()"> <i class="fa-solid fa-pen-to-square"></i></button>
                     <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>

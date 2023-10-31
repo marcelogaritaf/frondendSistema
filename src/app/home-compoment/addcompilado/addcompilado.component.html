@@ -12,14 +12,39 @@
                 <input type="text" formControlName="codigoPrograma" placeholder="Codigo del Programa"> <br>
                 <label>Codigo Subpartida:</label> <br>
                 <input type="text" formControlName="codigoSubpartida" placeholder="Codigo de Subpartida"> <br>
-                <label>Id Articulo:</label> <br>
-                <input type="text" formControlName="idArticulo" placeholder="Id de articulo"> <br>
-                <label>Periodo de Ejecución:</label> <br>
-                <input type="text" formControlName="periodo" placeholder="Periodo Ejecución"> <br>
+                <label>Articulo:</label> <br>
+                <input type="text" formControlName="articulo" placeholder="Nombre de Articulo"> <br>
+                <label>Codigo Articulo:</label> <br>
+                <input type="text" formControlName="codigoArticulo" placeholder="Codigo de Articulo"> <br>
+                <label>Cantidad:</label> <br>
+                <input type="text" formControlName="Cantidad" placeholder="Cantidad"> <br>
+                <label>Costo Unitario:</label> <br>
+                <input type="text" formControlName="costoUnitario" placeholder="Costo Unitario"> <br>
             </div>
             <div class="column2">
+                <label>Monto Total:</label> <br>
+                <input type="text" formControlName="montoTotal" placeholder="Monto Total"> <br>
+                <label>Monto Modificar:</label> <br>
+                <input type="text" formControlName="montoModificar" placeholder="Monto a Modificar"> <br>
+                <label>Monto Real:</label> <br>
+                <input type="text" formControlName="montoReal" placeholder="Monto Real"> <br>
+                <label>Descripción:</label> <br>
+                <textarea cols="30" rows="5" formGroupName="descripcion" placeholder="Descripción"></textarea> <br>
+                <label>Fase:</label> <br>
+                <select formControlName="fase">
+                    <option value="1">Pendiente</option>
+                    <option value="2">Confección</option>
+                    <option value="3">Tramite</option>
+                    <option value="4">Finalizado</option>
+                </select>
+                <label>Periodo de Ejecución:</label> <br>
+                <input type="text" formControlName="periodo" placeholder="Periodo Ejecución"> <br>
                 <label>Prioridad:</label> <br>
                 <input type="text" formControlName="prioridad" placeholder="Prioridad"> <br>
+            </div>
+            <div class="column3">
+                <label>Observaciones:</label> <br>
+                <textarea cols="30" rows="5" formGroupName="observaciones" placeholder="Observaciones"></textarea> <br>
                 <label>Tipo Tramite:</label> <br>
                 <input type="text" formControlName="tipoTramite" placeholder="Tipo de Tramite"> <br>
                 <label>Numero de Contrato Vigente:</label> <br>
@@ -28,6 +53,8 @@
                 <input type="text" formControlName="certificacion" placeholder="Certificación"> <br>
                 <label>Numero SC UC/UA:</label> <br>
                 <input type="text" formControlName="nSCuCuA" placeholder="Numero SC UC/UA"> <br>
+                <label>Periodo:</label> <br>
+                <input type="text" formControlName="periodo" placeholder="Periodo"> <br>
                 <button type="submit" [disabled]="form.invalid">Agregar</button>
             </div>
         </form>   
