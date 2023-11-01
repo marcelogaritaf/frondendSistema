@@ -53,5 +53,11 @@ export class HomeCompomentComponent implements OnInit{
   agregar(){
     this.router.navigate(['/AgregarDato'])
   }
+  editarNavigation(){
+    this.router.navigate(['/EditarDato'])
+  }
+  campos(data: any){
+    this.service.actualizar(data)
+  }
 }
 

@@ -2,7 +2,7 @@
     <!-- <h2>Agregar Campos</h2> -->
     <img src="../../../assets/logo2.png" alt="logo referencia">
     <div class="form">
-        <form class="form" [formGroup]="form" (ngSubmit)="agregarDatos()">
+        <form class="form" [formGroup]="form" (ngSubmit)="editarData()">
             <div class="column1">
                 <label>Oficina:</label> <br>
                 <input type="text" formControlName="oficina" placeholder="Nombre de Oficina"> <br>
@@ -55,7 +55,7 @@
                 <input type="text" formControlName="nSCuCuA" placeholder="Numero SC UC/UA"> <br>
                 <label>Periodo:</label> <br>
                 <input type="text" formControlName="periodoYear" placeholder="Periodo"> <br>
-                <button type="submit">Agregar</button>
+                <button type="submit">Editar</button>
             </div>
         </form>   
     </div>

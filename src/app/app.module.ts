@@ -21,6 +21,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilado.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AsingTaskComponent } from './designadas/asing-task/asing-task.component';
+import { UpdateComponentComponent } from './home-compoment/update-component/update-component.component';
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
@@ -40,6 +41,7 @@ const sistemaRoutes:Routes=[
     RegistroAsignarComponent,
     AddcompiladoComponent,
     AsingTaskComponent,
+    UpdateComponentComponent,
   ],
   imports: [
     BrowserModule,

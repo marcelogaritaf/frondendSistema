@@ -23,14 +23,14 @@
             <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
                 <td>{{ dato.idAsignados }}</td>
                 <td>{{ dato.idCompilado }}</td>
-                <td>{{ dato.oProductos?.articulo }}</td>
+                <td>{{ dato.oCompilado?.articulo }}</td>
                 <td>{{ dato.oCompilado?.oficina }}</td>
                 <td>{{ dato.nombreUsuario}}</td>
-                <td>{{ dato.estado }}</td>
+                <td>{{ dato.oCompilado?.estado }}</td>
                 <td colspan="2">{{ dato.correoElectronico }}</td>
                 <td>{{ dato.fechaInicio }}</td>
                 <td>{{ dato.fechaFin}}</td>
-                <td>{{ dato.oProductos?.montoTotal }}</td>
+                <td>{{ dato.oCompilado?.montoTotal }}</td>
                 <td>
                     <button (click)="eliminarAsignaciones(dato.idAsignados)"><i class="fa-solid fa-trash"></i></button>
                     <button > <i class="fa-solid fa-pen-to-square"></i></button>

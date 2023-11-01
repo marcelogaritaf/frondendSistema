@@ -14,8 +14,6 @@ export class AsignarComponent {
     this.form=this.formBuilder.group({
       idAsignados:0,
       idCompilado:['',[Validators.required]],
-      idArticulo:['',[Validators.required]],
-      estado:['',[Validators.required]],
       fechaInicio:['',[Validators.required]],
       fechaFinal:['',[Validators.required]],
       nombreUsuario:['',[Validators.required]],
@@ -25,8 +23,6 @@ export class AsignarComponent {
   agregarAsignaciones(){
     const formData:any={
       idCompilado:this.form.get('idCompilado')?.value,
-      idProductos:this.form.get('idArticulo')?.value,
-      estado:this.form.get('estado')!.value,
       fechaInicio:this.form.get('fechaInicio')?.value,
       fechaFin: this.form.get('fechaFinal')?.value,
       nombreUsuario:this.form.get('nombreUsuario')!.value,
