@@ -12,10 +12,9 @@ import { debounceTime } from 'rxjs';
 })
 export class HomeCompomentComponent implements OnInit{
   p:number=1;
-  datos:any=null;
-  // controlform=this.fb.nonNullable.group({
-  //   id:1
-  // });
+  totalLength:any
+  datos:any=[];
+  filterData="";
   constructor(private router: Router, private service: ApiconnectService, private toast:ToastrService, private fb:FormBuilder){
 
   }
@@ -24,15 +23,6 @@ export class HomeCompomentComponent implements OnInit{
     // this.fectData();
 
   }
-  // fectData():void{
-  //   const id=this.controlform.value.id ?? 1
-  //   this.service.ObtenerDatosByQuery(id).subscribe(result=>{
-  //     this.datos=result;
-  //   })
-  // }
-  // buscador():void{
-  //   this.fectData();
-  // }
   cargaDatos(){
     this.service.ObtenerDatos().subscribe(result=>{
       console.log(result)

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
@@ -22,6 +23,7 @@ import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilad
 import { ToastrModule } from 'ngx-toastr';
 import { AsingTaskComponent } from './designadas/asing-task/asing-task.component';
 import { UpdateComponentComponent } from './home-compoment/update-component/update-component.component';
+import { NgArrayPipesModule } from 'ngx-pipes';
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
@@ -52,6 +54,7 @@ const sistemaRoutes:Routes=[
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    NgArrayPipesModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,

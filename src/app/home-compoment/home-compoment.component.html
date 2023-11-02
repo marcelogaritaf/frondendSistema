@@ -1,6 +1,5 @@
 <div class="buscador">
-    <button><i class="fa-solid fa-magnifying-glass" style="color: #d9f9f9;"></i>  Buscar Articulo</button>
-    <input type="text" placeholder="Codigo del articulo"> 
+    <input type="text"  placeholder="Buscador... Ejm: codigo de articulo" [(ngModel)]="filterData"> 
     <button (click)="agregar();"><i class="fa-solid fa-circle-plus" style="color: #d9f9f9;"></i>  Agregar Articulo</button>
 </div>
 <div class="tableData">
@@ -8,55 +7,55 @@
         <thead>
             <tr>
               <th>Id</th>
-              <th colspan="2">Oficina</th>
-              <th colspan="2">Area</th>
-              <th colspan="3">Codigo Programa</th>
-              <th colspan="3">Codigo Subpartida</th>
-              <th colspan="3">Articulo</th>
-              <th colspan="2">Codigo Articulo</th>
-              <th colspan="2">Cantidad</th>
-              <th colspan="2">Costo Unidad</th>
-              <th colspan="2">Monto total</th>
-              <th colspan="2">Monto Modificar</th>
-              <th colspan="2">Monto Real</th>
-              <th colspan="5">Descripción</th>
-              <th colspan="2">Fase</th>
-              <th colspan="2">Ejecución</th>
-              <th colspan="2">Prioridad</th>
-              <th colspan="5">Observaciones</th>
-              <th colspan="2">Tipo Tramite</th>
-              <th colspan="2">Numero Contrato</th>
-              <th colspan="3">Certificación</th>
-              <th colspan="2">Numero SC UC/UA</th>
-              <th colspan="2">Periodo</th>
-              <th colspan="2">Acciones</th>
+              <th colspan="6">Oficina</th>
+              <th colspan="5">Area</th>
+              <th colspan="6">Codigo Programa</th>
+              <th colspan="6">Codigo Subpartida</th>
+              <th colspan="5">Articulo</th>
+              <th colspan="5">Codigo Articulo</th>
+              <th colspan="5">Cantidad</th>
+              <th colspan="5">Costo Unidad</th>
+              <th colspan="5">Monto total</th>
+              <th colspan="5">Monto Modificar</th>
+              <th colspan="5">Monto Real</th>
+              <th colspan="10">Descripción</th>
+              <th colspan="5">Fase</th>
+              <th colspan="6">Ejecución</th>
+              <th colspan="5">Prioridad</th>
+              <th colspan="10">Observaciones</th>
+              <th colspan="5">Tipo Tramite</th>
+              <th colspan="5">Numero Contrato</th>
+              <th colspan="7">Certificación</th>
+              <th colspan="5">Numero SC UC/UA</th>
+              <th colspan="5">Periodo</th>
+              <th colspan="5">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
+            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p, totalItems:totalLength} | filterBy:['codigoSubpartida','codigoPrograma','periodo']:this.filterData">
                 <td>{{ dato.idCompilado }}</td>
-                <td colspan="2">{{ dato.oficina }}</td>
-                <td colspan="2">{{ dato.area }}</td>
-                <td colspan="3">{{ dato.codigoPrograma }}</td>
-                <td colspan="3">{{ dato.codigoSubpartida }}</td>
-                <td colspan="3">{{dato.articulo}}</td>
-                <td colspan="2">{{ dato.codigoArticulo }}</td>
-                <td colspan="2">{{ dato.cantidad }}</td>
-                <td colspan="2">{{ dato.costoUnitario }}</td>
-                <td colspan="2">{{ dato.montoTotal }}</td>
-                <td colspan="2">{{dato.montoModificar}}</td>
-                <td colspan="2">{{dato.montoReal}}</td>
-                <td colspan="5">{{ dato.descripcion }}</td>
-                <td colspan="2">{{dato.estado}}</td>
-                <td colspan="2">{{ dato.periodoEjecucion }}</td>
-                <td colspan="2">{{ dato.prioridad }}</td>
-                <td colspan="5">{{dato.observaciones}}</td>
-                <td colspan="2">{{ dato.tipoTramite }}</td>
-                <td colspan="2">{{ dato.numeroContratoVigente }}</td>
-                <td colspan="3">{{ dato.requisionCertificacion }}</td>
-                <td colspan="2">{{ dato.numeroScUcUa }}</td>
-                <td colspan="2">{{dato.periodo}}</td>
-                <td colspan="2">
+                <td colspan="6">{{ dato.oficina }}</td>
+                <td colspan="5">{{ dato.area }}</td>
+                <td colspan="6">{{ dato.codigoPrograma }}</td>
+                <td colspan="6">{{ dato.codigoSubpartida }}</td>
+                <td colspan="5">{{dato.articulo}}</td>
+                <td colspan="5">{{ dato.codigoArticulo }}</td>
+                <td colspan="5">{{ dato.cantidad }}</td>
+                <td colspan="5">{{ dato.costoUnitario }}</td>
+                <td colspan="5">{{ dato.montoTotal }}</td>
+                <td colspan="5">{{dato.montoModificar}}</td>
+                <td colspan="5">{{dato.montoReal}}</td>
+                <td colspan="10">{{ dato.descripcion }}</td>
+                <td colspan="5">{{dato.estado}}</td>
+                <td colspan="6">{{ dato.periodoEjecucion }}</td>
+                <td colspan="5">{{ dato.prioridad }}</td>
+                <td colspan="10">{{dato.observaciones}}</td>
+                <td colspan="5">{{ dato.tipoTramite }}</td>
+                <td colspan="5">{{ dato.numeroContratoVigente }}</td>
+                <td colspan="7">{{ dato.requisionCertificacion }}</td>
+                <td colspan="5">{{ dato.numeroScUcUa }}</td>
+                <td colspan="5">{{dato.periodo}}</td>
+                <td colspan="5">
                     <button (click)="eliminar(dato.idCompilado)"><i class="fa-solid fa-trash"></i></button>
                     <button (click)="campos(dato)" (click)="editarNavigation()" > <i class="fa-solid fa-pen-to-square"></i></button>
                     <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>

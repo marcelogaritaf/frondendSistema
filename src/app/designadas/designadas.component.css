@@ -22,7 +22,7 @@
      padding: 15px;
      width: 460px;
      border-radius: 20px;
-     border: 0;
+     border: 1px solid rgba(225, 234, 240, 0.905) ;
      background-color: rgba(248, 248, 248, 0.885);
  }
  .buscador button:hover{

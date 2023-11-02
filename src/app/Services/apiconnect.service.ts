@@ -42,7 +42,7 @@ export class ApiconnectService {
     this.actulizarData.next(data);
   }
   updateData(idProductos:number, data:any):Observable<any>{
-    return this.http.put<any>(this.AppUrl+"api/Compilado/Editar"+idProductos,data);
+    return this.http.put<any>(this.AppUrl+"api/Compilado/Editar",data);
   }
   getData$(): Observable<any>{
     return this.actulizarData.asObservable();

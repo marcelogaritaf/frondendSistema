@@ -71,10 +71,11 @@ export class UpdateComponentComponent implements OnInit{
   }
   editarData(){
     if (this.form.valid){
+      this.form.get('idCompilado')!.setValue(this.id);
       const data=this.form.value;
       this.service.updateData(this.id,data).subscribe(resp=>{
         console.log(resp)
-        this.toast.info('Registro actualizado', 'El dato ha sido actualizado')
+        this.toast.info('Registro actualizado', `EL dato con el ID ${this.id} ha sido actualizado`)
       })
     }else[
       this.toast.error('Error','Dato no actualizado')
