@@ -15,6 +15,8 @@ export class HomeCompomentComponent implements OnInit{
   totalLength:any
   datos:any=[];
   filterData="";
+  filterData2="";
+  filterData3="";
   constructor(private router: Router, private service: ApiconnectService, private toast:ToastrService, private fb:FormBuilder){
 
   }

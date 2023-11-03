@@ -1,5 +1,7 @@
 <div class="buscador">
-    <input type="text"  placeholder="Buscador... Ejm: codigo de articulo" [(ngModel)]="filterData"> 
+    <input type="text"  placeholder="Buscar por C.Subpartida..." [(ngModel)]="filterData"> 
+    <input type="text"  placeholder="Buscar por Oficina..." [(ngModel)]="filterData2"> 
+    <input type="text"  placeholder="Buscar por Fase..." [(ngModel)]="filterData3"> 
     <button (click)="agregar();"><i class="fa-solid fa-circle-plus" style="color: #d9f9f9;"></i>  Agregar Articulo</button>
 </div>
 <div class="tableData">
@@ -32,7 +34,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p, totalItems:totalLength} | filterBy:['codigoSubpartida','codigoPrograma','periodo']:this.filterData">
+            <tr *ngFor="let dato of datos.response 
+            | filterBy:['codigoSubpartida']:this.filterData 
+            | filterBy:['oficina']:this.filterData2 
+            | filterBy:['estado']:this.filterData3">
                 <td>{{ dato.idCompilado }}</td>
                 <td colspan="6">{{ dato.oficina }}</td>
                 <td colspan="5">{{ dato.area }}</td>
