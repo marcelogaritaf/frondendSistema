@@ -4,6 +4,7 @@ import { ApiconnectService } from '../Services/apiconnect.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-home-compoment',
@@ -50,6 +51,13 @@ export class HomeCompomentComponent implements OnInit{
   }
   campos(data: any){
     this.service.actualizar(data)
+  }
+  exportar(){
+    this.service.getExcel().subscribe(result=>{
+      const blob = new Blob([result], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      // Utiliza la biblioteca file-saver para descargar el archivo
+      saveAs(blob, 'REPORTE COMPILADO.xlsx');
+    })
   }
 }
 

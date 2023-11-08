@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AsingTaskComponent } from './designadas/asing-task/asing-task.component';
 import { UpdateComponentComponent } from './home-compoment/update-component/update-component.component';
 import { NgArrayPipesModule } from 'ngx-pipes';
+import { saveAs } from 'file-saver';
 
 const sistemaRoutes:Routes=[
   {path:'',component:HomeCompomentComponent},
