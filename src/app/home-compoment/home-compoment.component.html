@@ -65,11 +65,10 @@
                     <button (click)="eliminar(dato.idCompilado)"><i class="fa-solid fa-trash"></i></button>
                     <button (click)="campos(dato)" (click)="editarNavigation()" > <i class="fa-solid fa-pen-to-square"></i></button>
                     <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>
-                    
+                    <button (click)="descargePDF(dato.idCompilado)" ><i class="fa-solid fa-download"></i></button>
                 </td>
             </tr>
         </tbody>
       </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
 </div>
 

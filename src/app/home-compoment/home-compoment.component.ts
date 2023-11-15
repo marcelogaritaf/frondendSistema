@@ -18,6 +18,7 @@ export class HomeCompomentComponent implements OnInit{
   filterData="";
   filterData2="";
   filterData3="";
+  pdfUrl="";
   constructor(private router: Router, private service: ApiconnectService, private toast:ToastrService, private fb:FormBuilder){
 
   }
@@ -57,6 +58,16 @@ export class HomeCompomentComponent implements OnInit{
       const blob = new Blob([result], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       // Utiliza la biblioteca file-saver para descargar el archivo
       saveAs(blob, 'REPORTE COMPILADO.xlsx');
+    })
+  }
+  descargePDF(data:any){
+    this.service.genererPDF(data).subscribe(res=>{
+      let blob:Blob= res.body as Blob;
+      let url=window.URL.createObjectURL(blob);
+      let a=document.createElement('a');
+      a.download=`Reporte_ID ${data}`;
+      a.href=url;
+      a.click();
     })
   }
 }

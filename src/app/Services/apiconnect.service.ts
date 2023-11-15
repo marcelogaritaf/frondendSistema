@@ -23,6 +23,9 @@ export class ApiconnectService {
   getExcel(): Observable<any>{
     return this.http.get(this.AppUrl + "api/Compilado/ExportExcel", { responseType: 'arraybuffer' });
   }
+  genererPDF(id:any){
+    return this.http.get(this.AppUrl+"api/Compilado/GenerarPDF?idCompilado="+id,{observe:'response', responseType:'blob'})
+  }
   ObtenerDatosByQuery(id:number):Observable<any>{
     return this.http.get<any>(this.AppUrl+"api/Compilado/Obtener/"+id)
   }

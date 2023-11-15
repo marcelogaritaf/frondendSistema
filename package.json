@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "file-saver": "^2.0.5",
+    "ngx-extended-pdf-viewer": "^18.1.5",
     "ngx-filter-pipe": "^2.1.2",
     "ngx-pagination": "^6.0.3",
     "ngx-pipes": "^3.2.2",
