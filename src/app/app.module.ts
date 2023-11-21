@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FilterPipeModule } from 'ngx-filter-pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
@@ -12,6 +11,7 @@ import { HomeCompomentComponent } from './home-compoment/home-compoment.componen
 import { DesignadasComponent } from './designadas/designadas.component';
 import { OficiniasComponent } from './oficinias/oficinias.component';
 import { RegistroAsignarComponent } from './home-compoment/registro-asignar/registro-asignar.component';
+import { LoginComponent } from './login/login.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -28,7 +28,8 @@ import { saveAs } from 'file-saver';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 const sistemaRoutes:Routes=[
-  {path:'',component:HomeCompomentComponent},
+  {path:'', component:LoginComponent},
+  {path:'Home',component:HomeCompomentComponent},
   {path:'Articulos', component:ArticulosComponent},
   {path:'Asignacion', component:AsignarComponent},
   {path:'Oficinas', component:OficiniasComponent},
@@ -46,6 +47,7 @@ const sistemaRoutes:Routes=[
     AddcompiladoComponent,
     AsingTaskComponent,
     UpdateComponentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
