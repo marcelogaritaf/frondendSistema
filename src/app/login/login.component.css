@@ -1,0 +1,25 @@
+.back-imagen{
+    background-image: url(../../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.back-opacidad{
+    background-color:rgba(27, 27, 27, 0.633);
+    height: 100%;
+    width: 100%;
+}
+.login-content{
+    background-color: aliceblue;
+    width: 350px;
+    height: 380px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: rgba(16, 40, 69, 0.903) 0px 20px 30px -10px;
+    border-radius: 20px;
+}
