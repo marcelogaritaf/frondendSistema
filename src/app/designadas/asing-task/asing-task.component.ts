@@ -23,7 +23,7 @@ export class AsingTaskComponent implements OnInit{
       console.log(result)
       this.respuest= result
       this.datos.patchValue({
-        correo:this.respuest.correoElectronico
+        correo:this.respuest.oUsuarios.correoElectronico
       })
     })
   }

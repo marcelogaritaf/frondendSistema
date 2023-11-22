@@ -20,14 +20,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
+            <tr *ngFor="let dato of datos.response">
                 <td>{{ dato.idAsignados }}</td>
                 <td>{{ dato.idCompilado }}</td>
                 <td>{{ dato.oCompilado?.articulo }}</td>
                 <td>{{ dato.oCompilado?.oficina }}</td>
-                <td>{{ dato.nombreUsuario}}</td>
+                <td>{{ dato.oUsuarios?.nombreUsuario}}</td>
                 <td>{{ dato.oCompilado?.estado }}</td>
-                <td colspan="2">{{ dato.correoElectronico }}</td>
+                <td colspan="2">{{ dato.oUsuarios?.correoElectronico }}</td>
                 <td>{{ dato.fechaInicio }}</td>
                 <td>{{ dato.fechaFin}}</td>
                 <td>{{ dato.oCompilado?.montoTotal }}</td>
@@ -39,6 +39,5 @@
             </tr>
         </tbody>
       </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
 </div>
 
