@@ -14,19 +14,17 @@ export class AsignarComponent {
     this.form=this.formBuilder.group({
       idAsignados:0,
       idCompilado:['',[Validators.required]],
+      idUsuarios:['',[Validators.required]],
       fechaInicio:['',[Validators.required]],
       fechaFinal:['',[Validators.required]],
-      nombreUsuario:['',[Validators.required]],
-      correo:['',[Validators.required]]
     })
   }
   agregarAsignaciones(){
     const formData:any={
       idCompilado:this.form.get('idCompilado')?.value,
+      idUsuarios:this.form.get('idUsuarios')?.value,
       fechaInicio:this.form.get('fechaInicio')?.value,
       fechaFin: this.form.get('fechaFinal')?.value,
-      nombreUsuario:this.form.get('nombreUsuario')!.value,
-      correoElectronico:this.form.get('correo')!.value
     }
     this.service.addAsig(formData).subscribe(result=>{
       console.log('guardado correctamente')

@@ -6,17 +6,15 @@
             <div class="column1">
                 <label>Id Compilado:</label> <br>
                 <input type="text" formControlName="idCompilado" placeholder="Id de compilado"> <br>
+                <label>Id Usuario:</label> <br>
+                <input type="text" formControlName="idUsuarios" placeholder="Fecha de inicio"> <br>
                 <label>Fecha inicio:</label> <br>
-                <input type="text" formControlName="fechaInicio" placeholder="Fecha de inicio"> <br>
+                <input type="text" formControlName="fechaInicio" placeholder="Nombre de Usuario"> <br>
                 <label>Fecha Final:</label> <br>
                 <input type="text" formControlName="fechaFinal" placeholder="Fecha de finalización"> <br>
+                <button type="submit" [disabled]="form.invalid">Agregar</button>         
             </div>
             <div class="column2">
-                <label>Nombre Usuario:</label> <br>
-                <input type="text" formControlName="nombreUsuario" placeholder="Nombre de Usuario"> <br>
-                <label>Correo Electronico:</label> <br>
-                <input type="text" formControlName="correo" placeholder="Correo Electronico"> <br>
-                <button type="submit" [disabled]="form.invalid">Agregar</button>         
             </div>
         </form>   
     </div>
