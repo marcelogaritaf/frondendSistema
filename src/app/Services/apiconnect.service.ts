@@ -9,7 +9,7 @@ import { CompiladoModels } from '../models/compiladoModels';
   providedIn: 'root'
 })
 export class ApiconnectService {
-  AppUrl="http://localhost:5158/";
+  AppUrl="http://localhost:5182/";
   private actulizarData = new BehaviorSubject <any>({}as any)
   constructor( private http: HttpClient ) {
   }
