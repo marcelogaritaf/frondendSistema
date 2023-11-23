@@ -1,0 +1,59 @@
+.menu{
+    background: rgb(5,59,80);
+    background: linear-gradient(90deg, rgba(5,59,80,1) 25%, rgba(49,157,199,1) 78%);
+    box-shadow: rgb(56, 100, 219) 0px 0px 0px 3px, rgb(255, 255, 255) 0px 0px 0px 6px, rgba(241, 67, 67, 0.919) 0px 0px 0px 9px, rgba(251, 251, 251, 0.87) 0px 0px 0px 12px, rgb(56, 100, 219) 0px 0px 0px 15px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+.menu button{
+    width: 150px;
+    padding-left: 10px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.menu button img{
+    width: 100%;
+    transition: opacity 0.4s ease-out;
+    cursor: pointer;
+
+}
+.lista{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+.lista li button{
+    text-decoration: none;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    color: rgb(217, 249, 249);
+    transition:all 0.3s ease-in, box-shadow 0.5s ease-in-out;
+    cursor: pointer;
+    font-size: 15px;
+}
+.lista li button:hover{
+    color: rgba(16, 79, 103, 0.767);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    letter-spacing: 4px;
+}
+.menu button img:hover{
+    opacity: 0.5;
+}
+.menu .menu-btn{
+    background-color:rgba(0, 0, 128, 0);
+    width: 50px;
+    border: 0;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.menu .menu-btn img{
+    width: 100%;
+}
+.menu .menu-btn:hover{
+    opacity: 0.5;
+}
