@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { CompiladoModels } from '../models/compiladoModels';
 // export interface dataCompilado{
 //   oficina:string,
@@ -10,6 +10,7 @@ import { CompiladoModels } from '../models/compiladoModels';
 })
 export class ApiconnectService {
   AppUrl="http://localhost:5182/";
+  private isAuthentica = false;
   private actulizarData = new BehaviorSubject <any>({}as any)
   constructor( private http: HttpClient ) {
   }
@@ -52,5 +53,25 @@ export class ApiconnectService {
   }
   getData$(): Observable<any>{
     return this.actulizarData.asObservable();
+  }
+  //editar asignaciones
+  updateAsignaciones(idAsignados:number, data:any):Observable<any>{
+    return this.http.put<any>(this.AppUrl+"api/Asignados/Editar",data);
+  }
+  //metodo de authenticar
+  isAuthenticated(): boolean{
+    return this.isAuthentica;
+  }
+  //login
+  login(user:any):Observable<any>{
+    return this.http.post(this.AppUrl+"api/Usuario/login", user).pipe(
+      tap(response=>{
+        this.isAuthentica=true;
+      })
+    );
+  }
+  //resgistro
+  registroU(user:any):Observable<any>{
+    return this.http.post(this.AppUrl+"api/Usuario/Agregar", user);
   }
 }
