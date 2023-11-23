@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+    <!-- <h2>Agregar Campos</h2> -->
+    <img src="../../../assets/logo2.png" alt="logo referencia">
+    <div class="form" >
+        <form class="form" [formGroup]="form" (ngSubmit)="EditarAsignaciones()">
+            <div class="column1">
+                <label>Id Compilado:</label> <br>
+                <input type="text" formControlName="idCompilado" placeholder="Id de compilado"> <br>
+                <label>Id Usuario:</label> <br>
+                <input type="text" formControlName="idUsuarios" placeholder="Id de Usuarios"> <br>
+                <label>Fecha inicio:</label> <br>
+                <input type="text" formControlName="fechaInicio" placeholder="Nombre de Usuario"> <br>
+                <label>Fecha Final:</label> <br>
+                <input type="text" formControlName="fechaFin" placeholder="Fecha de finalización"> <br>
+                <button type="submit" [disabled]="form.invalid">Editar</button>         
+            </div>
+            <div class="column2">
+            </div>
+        </form>   
+    </div>
+</div>
