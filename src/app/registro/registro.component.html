@@ -1,0 +1,18 @@
+<div class="back-imagen">
+    <div class="back-opacidad">
+        <div class="login-content">
+            <img src="../../assets/logo2.png" alt="">
+            <form [formGroup]="form" (ngSubmit)="registrarUser()">
+                <label>Nombre Completo:</label> <br>
+                <input type="text" formControlName="nombreCompleto" placeholder="Nombre Completo" name="correo"> <br>
+                <label>Correo Electronico:</label> <br>
+                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo"> <br>
+                <label>Oficina:</label> <br>
+                <input type="text" formControlName="Oficina" placeholder="Nombre de oficina" name="correo"> <br>
+                <label>Contraseña:</label> <br>
+                <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo"> <br>
+                <button>Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
