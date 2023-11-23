@@ -26,14 +26,17 @@ import { UpdateComponentComponent } from './home-compoment/update-component/upda
 import { NgArrayPipesModule } from 'ngx-pipes';
 import { saveAs } from 'file-saver';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AuthGuardService } from './Services/auth-guard.service';
+import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
 
 const sistemaRoutes:Routes=[
-  {path:'', component:LoginComponent},
-  {path:'Home',component:HomeCompomentComponent},
-  {path:'Articulos', component:ArticulosComponent},
-  {path:'Asignacion', component:AsignarComponent},
-  {path:'Oficinas', component:OficiniasComponent},
-  {path:'Designadas', component:DesignadasComponent}
+  {path:'', redirectTo:'/login', pathMatch:'full'},
+  {path:'login', component:LoginComponent},
+  {path:'Home',component:HomeCompomentComponent, canActivate: [AuthGuardService]},
+  {path:'Asignacion', component:AsignarComponent, canActivate: [AuthGuardService]},
+  {path:'Designadas', component:DesignadasComponent, canActivate: [AuthGuardService]}
 ]
 @NgModule({
   declarations: [
@@ -47,7 +50,11 @@ const sistemaRoutes:Routes=[
     AddcompiladoComponent,
     AsingTaskComponent,
     UpdateComponentComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    RegistroComponent,
+    UpdateDesignadasComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ const sistemaRoutes:Routes=[
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,15 @@
 <div class="back-imagen">
     <div class="back-opacidad">
         <div class="login-content">
-            <p>pruba de background login</p>
+            <img src="../../assets/logo.svg" alt="">
+            <form [formGroup]="form" (ngSubmit)="login()">
+                <label>Correo Electronico:</label> <br>
+                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo"> <br>
+                <label>Contraseña:</label> <br>
+                <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo"> <br>
+                <button>Ingresar</button>
+            </form>
+            <a href="/registro-Usuario">Registrar Usuario</a>
         </div>
     </div>
 </div>

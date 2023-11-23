@@ -50,6 +50,9 @@ export class HomeCompomentComponent implements OnInit{
   editarNavigation(){
     this.router.navigate(['/EditarDato'])
   }
+  BoletinNavegacion(){
+    this.router.navigate(['/Boletin'])
+  }
   campos(data: any){
     this.service.actualizar(data)
   }

@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="buscador">
     <input type="text"  placeholder="Buscar por C.Subpartida..." [(ngModel)]="filterData"> 
     <input type="text"  placeholder="Buscar por Oficina..." [(ngModel)]="filterData2"> 
@@ -64,7 +65,7 @@
                 <td colspan="5">
                     <button (click)="eliminar(dato.idCompilado)"><i class="fa-solid fa-trash"></i></button>
                     <button (click)="campos(dato)" (click)="editarNavigation()" > <i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="link"><a href="/Boletin"><i class="fa-solid fa-share"></i></a></button>
+                    <button class="link" (click)="BoletinNavegacion()"><i class="fa-solid fa-share"></i></button>
                     <button (click)="descargePDF(dato.idCompilado)" ><i class="fa-solid fa-download"></i></button>
                 </td>
             </tr>

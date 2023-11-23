@@ -4,13 +4,19 @@ import { RegistroAsignarComponent } from './home-compoment/registro-asignar/regi
 import { AddcompiladoComponent } from './home-compoment/addcompilado/addcompilado.component';
 import { AsingTaskComponent } from './designadas/asing-task/asing-task.component';
 import { UpdateComponentComponent } from './home-compoment/update-component/update-component.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AuthGuardService } from './Services/auth-guard.service';
+import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
 
 
 const routes: Routes = [
-  {path:'Boletin',component:RegistroAsignarComponent},
-  {path: 'AgregarDato', component:AddcompiladoComponent},
-  {path: 'AsignarData', component:AsingTaskComponent},
-  {path: 'EditarDato', component:UpdateComponentComponent}
+  {path:'', redirectTo:'/login', pathMatch:'full'},
+  {path:'registro-Usuario', component:RegistroComponent},
+  {path:'Boletin',component:RegistroAsignarComponent, canActivate:[AuthGuardService]},
+  {path: 'AgregarDato', component:AddcompiladoComponent, canActivate:[AuthGuardService]},
+  {path: 'AsignarData', component:AsingTaskComponent, canActivate:[AuthGuardService]},
+  {path: 'EditarDato', component:UpdateComponentComponent, canActivate:[AuthGuardService]},
+  {path: 'EditarAsigancion', component:UpdateDesignadasComponent, canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

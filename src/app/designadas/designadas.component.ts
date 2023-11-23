@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class DesignadasComponent implements OnInit{
   p:number=1;
   datos:any;
+  filterData="";
+  filterData2="";
   constructor(private router:Router,private service:ApiconnectService, private toast:ToastrService){
 
   }
@@ -34,7 +36,13 @@ export class DesignadasComponent implements OnInit{
   ruta(){
     this.router.navigate(['/AsignarData'])
   }
+  editarNavigation(){
+    this.router.navigate(["/EditarAsigancion"])
+  }
   campo(data: any){
+    this.service.actualizar(data)
+  }
+  camposEditar(data:any){
     this.service.actualizar(data)
   }
 }
