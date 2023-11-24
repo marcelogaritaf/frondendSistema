@@ -45,4 +45,14 @@ export class DesignadasComponent implements OnInit{
   camposEditar(data:any){
     this.service.actualizar(data)
   }
+  descargePDF(data:any){
+    this.service.genererPDFasignaciones(data).subscribe(res=>{
+      let blob:Blob= res.body as Blob;
+      let url=window.URL.createObjectURL(blob);
+      let a=document.createElement('a');
+      a.download=`Reporte_ID ${data}`;
+      a.href=url;
+      a.click();
+    })
+  }
 }

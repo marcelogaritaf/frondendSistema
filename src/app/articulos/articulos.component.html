@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="buscador">
     <button><i class="fa-solid fa-magnifying-glass" style="color: #d9f9f9;"></i>  Buscar Articulo</button>
     <input type="text" placeholder="Codigo del articulo"> 
@@ -7,31 +8,23 @@
     <table class="mainData">
         <thead>
             <tr>
-              <th>Id Articulos</th>
-              <th>Articulo</th>
-              <th>Codigo Articulo</th>
-              <th>Cantidad</th>
-              <th>Costo Unidad</th>
-              <th>Monto total</th>
-              <th>Descripción</th>
+              <th>Id Usuarios</th>
+              <th>Nombre Usuario</th>
+              <th>Correo Electronico</th>
+              <th>Oficina</th>
               <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response | paginate: {itemsPerPage:10, currentPage:p}">
-                <td>{{ dato.idProductos }}</td>
-                <td>{{dato.articulo}}</td>
-                <td>{{ dato.codigoArticulo }}</td>
-                <td>{{ dato.cantidad }}</td>
-                <td>{{ dato.costoUnitario }}</td>
-                <td>{{ dato.montoTotal }}</td>
-                <td>{{ dato.descripcion }}</td>
+            <tr *ngFor="let dato of datos.response">
+                <td>{{ dato.idUsuarios }}</td>
+                <td>{{dato.nombreUsuario}}</td>
+                <td>{{ dato.correoElectronico }}</td>
+                <td>{{ dato.oficina}}</td>
                 <td>
-                    <button><i class="fa-solid fa-trash"></i></button>
-                    <button> <i class="fa-solid fa-pen-to-square"></i></button>                
+                    <button (click)="eliminar(dato.idUsuarios)"><i class="fa-solid fa-trash"></i></button>            
                 </td>
             </tr>
         </tbody>
       </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
 </div>

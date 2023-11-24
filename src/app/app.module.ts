@@ -35,6 +35,7 @@ const sistemaRoutes:Routes=[
   {path:'', redirectTo:'/login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'Home',component:HomeCompomentComponent, canActivate: [AuthGuardService]},
+  {path:'Usuarios', component:ArticulosComponent, canActivate:[AuthGuardService]},
   {path:'Asignacion', component:AsignarComponent, canActivate: [AuthGuardService]},
   {path:'Designadas', component:DesignadasComponent, canActivate: [AuthGuardService]}
 ]

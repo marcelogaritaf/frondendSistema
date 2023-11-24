@@ -15,8 +15,8 @@ export class ApiconnectService {
   constructor( private http: HttpClient ) {
   }
   //metodo get 
-  ObtenerArticulos(){
-    return this.http.get(this.AppUrl+"api/Productos/rutaApi");
+  ObtenerUsuarios(){
+    return this.http.get(this.AppUrl+"api/Usuario/Usuario");
   }
   ObtenerDatos(): Observable<any> {
     return this.http.get(this.AppUrl+"api/Compilado/Compilado");
@@ -26,6 +26,9 @@ export class ApiconnectService {
   }
   genererPDF(id:any){
     return this.http.get(this.AppUrl+"api/Compilado/GenerarPDF?idCompilado="+id,{observe:'response', responseType:'blob'})
+  }
+  genererPDFasignaciones(id:any){
+    return this.http.get(this.AppUrl+"api/Asignados/GenerarPDF?idAsignados="+id,{observe:'response', responseType:'blob'})
   }
   ObtenerDatosByQuery(id:number):Observable<any>{
     return this.http.get<any>(this.AppUrl+"api/Compilado/Obtener/"+id)
@@ -44,6 +47,9 @@ export class ApiconnectService {
   }
   eliminarAsig(idAsignados:number): Observable<any>{
     return this.http.delete(this.AppUrl+"api/Asignados/Eliminar/"+idAsignados);
+  }
+  eliminarUsuarios(idUsuarios:number): Observable<any>{
+    return this.http.delete(this.AppUrl+"api/Usuario/Eliminar/"+idUsuarios);
   }
   actualizar(data: any){
     this.actulizarData.next(data);

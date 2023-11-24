@@ -18,4 +18,7 @@ export class NavbarComponent {
   designadasNavigation(){
     this.route.navigate(['/Designadas']);
   }
+  UsuariosNavigation(){
+    this.route.navigate(['/Usuarios'])
+  }
 }
