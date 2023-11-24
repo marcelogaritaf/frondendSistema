@@ -58,15 +58,22 @@
     background-color: rgba(16, 18, 55, 0.801);
     color: rgba(255, 255, 255, 0.609)
 }
-.login-content a{
-    display:flex;
+.login-content .links{
+   margin-left: 75px;
+   margin-right: auto;
+}
+.login-content .links a{
+    display:inline-block;
     justify-content: center;
     margin-top: 15px;
     text-decoration: none;
     color:#2196f3;
     transition: color 0.5s ease;
 }
-.login-content a:hover{
+.login-content .links .ref-contrasena{
+    margin-left: 5px;
+}
+.login-content .links a:hover{
     color: blueviolet;
 }
 
