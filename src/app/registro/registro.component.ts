@@ -29,8 +29,11 @@ export class RegistroComponent {
     }
     if(this.form.valid){
       this.service.registroU(formData).subscribe(data=>{
-        this.toast.success('Usuario registrado correctamente','Usuario Registrado');
-        this.router.navigateByUrl("/Home");
+        const idUsuarios = data.mensaje
+        this.toast.success('Usuario registrado correctamente',`ID del usuario ${idUsuarios}`);
+        setTimeout(()=>{
+          this.router.navigateByUrl("/Home");
+        },3000)
       })
     }else{
       this.toast.warning('Debe llenar los campos','Espacios Vacios')
