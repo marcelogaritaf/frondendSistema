@@ -8,6 +8,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
 import { ContrasenaComponent } from './contrasena/contrasena.component';
+import { UserEditComponent } from './articulos/user-edit/user-edit.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'AgregarDato', component:AddcompiladoComponent, canActivate:[AuthGuardService]},
   {path: 'AsignarData', component:AsingTaskComponent, canActivate:[AuthGuardService]},
   {path: 'EditarDato', component:UpdateComponentComponent, canActivate:[AuthGuardService]},
-  {path: 'EditarAsigancion', component:UpdateDesignadasComponent, canActivate:[AuthGuardService]}
+  {path: 'EditarAsigancion', component:UpdateDesignadasComponent, canActivate:[AuthGuardService]},
+  {path: 'Editar-Usuario', component:UserEditComponent, canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-articulos',
@@ -13,7 +14,8 @@ import { Toast, ToastrService } from 'ngx-toastr';
 export class ArticulosComponent{
    datos:any;
    p:number=1;
-   constructor(private service:ApiconnectService, private toast: ToastrService){
+   filterData=""
+   constructor(private service:ApiconnectService, private toast: ToastrService, private route:Router){
       this.service.ObtenerUsuarios().subscribe(result=>{
        console.log(result)
         this.datos=result;
@@ -27,5 +29,11 @@ export class ArticulosComponent{
             this.service.ObtenerDatos();
          })
       }
+   }
+   editarNavigation(){
+      this.route.navigate(['/Editar-Usuario'])
+   }
+   camposEditar(data:any){
+      this.service.actualizar(data)
    }
 }

@@ -31,6 +31,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
 import { ContrasenaComponent } from './contrasena/contrasena.component';
+import { UserEditComponent } from './articulos/user-edit/user-edit.component';
 
 const sistemaRoutes:Routes=[
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -57,6 +58,7 @@ const sistemaRoutes:Routes=[
     RegistroComponent,
     UpdateDesignadasComponent,
     ContrasenaComponent,
+    UserEditComponent,
 
   ],
   imports: [

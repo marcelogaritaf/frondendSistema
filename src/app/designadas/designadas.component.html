@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="buscador">
-    <input type="text" placeholder="Buscar por Oficina..." [(ngModel)]="filterData">
+    <input type="text" placeholder="Buscar por Fecha..." [(ngModel)]="filterData">
 </div>
 <div class="tableData">
     <table class="mainData">
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response">
+            <tr *ngFor="let dato of datos.response | filterBy:['fechaInicio','fechaFin']:this.filterData">
                 <td>{{ dato.idAsignados }}</td>
                 <td>{{ dato.idCompilado }}</td>
                 <td>{{ dato.oCompilado?.articulo }}</td>

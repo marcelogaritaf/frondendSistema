@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="buscador">
-    <input type="text" placeholder="Nombre Profesional..."> 
+    <input type="text" placeholder="Nombre Profesional y Oficina " [(ngModel)]="filterData"> 
 </div>
 <div class="tableData">
     <table class="mainData">
@@ -14,13 +14,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let dato of datos.response">
+            <tr *ngFor="let dato of datos.response | filterBy:['nombreUsuario','oficina']:this.filterData">
                 <td>{{ dato.idUsuarios }}</td>
                 <td>{{dato.nombreUsuario}}</td>
                 <td>{{ dato.correoElectronico }}</td>
                 <td>{{ dato.oficina}}</td>
                 <td>
-                    <button (click)="eliminar(dato.idUsuarios)"><i class="fa-solid fa-trash"></i></button>            
+                    <button (click)="eliminar(dato.idUsuarios)"><i class="fa-solid fa-trash"></i></button> 
+                    <button (click)="camposEditar(dato)" (click)="editarNavigation()" > <i class="fa-solid fa-pen-to-square"></i></button>          
                 </td>
             </tr>
         </tbody>
