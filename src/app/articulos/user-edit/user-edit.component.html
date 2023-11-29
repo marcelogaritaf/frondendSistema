@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="login-content">
+    <img src="../../assets/logo2.png" alt="">
+    <form [formGroup]="form" (ngSubmit)="editarUser()">
+        <label>Nombre Completo:</label> <br>
+        <input type="text" formControlName="nombreCompleto" placeholder="Nombre Completo" name="correo"> <br>
+        <label>Correo Electronico:</label> <br>
+        <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo"> <br>
+        <label>Oficina:</label> <br>
+        <input type="text" formControlName="Oficina" placeholder="Nombre de oficina" name="correo"> <br>
+        <button>Editar</button>
+    </form>
+</div>
