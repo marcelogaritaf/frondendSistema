@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { ApiconnectService } from 'src/app/Services/apiconnect.service';
 
 @Component({
   selector: 'app-registro-asignar',
@@ -10,24 +12,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegistroAsignarComponent {
   datos: FormGroup;
 
-  constructor(private http:HttpClient){
-    this.datos= new FormGroup({
-      correo: new FormControl('',[Validators.required, Validators.email]),
-      asunto: new FormControl('',Validators.required),
-      mensaje: new FormControl('',Validators.required),
-      archivo: new FormControl('',Validators.required),
+  constructor(private formBuilder:FormBuilder, private service:ApiconnectService, private toast:ToastrService){
+    this.datos = this.formBuilder.group({
+      toEmail: ['',[Validators.required]],
+      subject: ['',[Validators.required]],
+      body: ['',[Validators.required]],
+      attachment: ['']
     })
   }
   enviarCorreo(){
-    let params ={
-      email:this.datos.value.correo,
-      asunto:this.datos.value.asunto,
-      mensaje:this.datos.value.mensaje,
-      archivo:this.datos.value.archivo
-    }
-    console.log(params)
-    this.http.post('http://localhost:3000/envio', params).subscribe(resp=>{
-      console.log(resp)
+    const formData=this.datos.getRawValue();
+    console.log(formData)
+    this.service.enviarCorreo(formData).subscribe(result=>{
+      this.toast.success('Correo Enviado','Correctamente')
+      console.log(result)
+    }, (error: HttpErrorResponse) => {
+      console.error('Error en la respuesta del servidor:', error.error);
+      this.toast.error('Error al enviar el correo', 'Error');
     })
+    console.log(this.datos)
   }
 }

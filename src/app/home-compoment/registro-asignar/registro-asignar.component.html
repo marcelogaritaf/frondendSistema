@@ -1,18 +1,20 @@
 <app-navbar></app-navbar>
 <div class="form-container">
     <img src="../../../assets/logo2.png" alt="logo referencia">
-    <div class="form" [formGroup]="datos">
+    <div class="form">
+        <form [formGroup]="datos">
             <label>Correo Destinatario:</label> <br>
-            <input type="text" name="Correo" id="Correo" placeholder="Correo Electronico" formControlName="correo"><br>
+            <input type="text"  id="Correo" placeholder="Correo Electronico" formControlName="toEmail"><br>
             <label>Asunto:</label> <br>
-            <input type="text" name="Correo" id="asunto" placeholder="Asunto" formControlName="asunto"><br>
+            <input type="text"  id="asunto" placeholder="Asunto" formControlName="subject"><br>
             <label>Mensaje:</label><br>
-            <textarea name="Correo" id="mensaje" placeholder="Mensaje" formControlName="mensaje"></textarea><br>
+            <textarea id="mensaje" placeholder="Mensaje" formControlName="body"></textarea><br>
             <label>Adjuntar Archivo:</label> <br>
             <div class="btn-adjuntar">
                 <p><i class="fa-solid fa-arrow-up-from-bracket"></i>Adjuntar</p>
-                <input type="file" name="Correo" id="archivo" placeholder="Adjuntar Archivo" formControlName="archivo"><br>
+                <input type="file" id="archivo" placeholder="Adjuntar Archivo" formControlName="attachment"><br>
             </div>
             <button type="button" (click)="enviarCorreo()">Enviar</button>
+        </form>
     </div>
 </div>

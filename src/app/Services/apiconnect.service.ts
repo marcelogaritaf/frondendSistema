@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { CompiladoModels } from '../models/compiladoModels';
 // export interface dataCompilado{
@@ -38,6 +38,9 @@ export class ApiconnectService {
   }
   addData(compiladoData:any): Observable<any> {
     return this.http.post<any>(this.AppUrl+"api/Compilado/Agregar", compiladoData);
+  }
+  enviarCorreo(correoData:any): Observable<any> {
+    return this.http.post<any>(this.AppUrl+"api/Compilado/EnviarCorreo", correoData)
   }
   addAsig(asignarData:any): Observable<any>{
     return this.http.post<any>(this.AppUrl+"api/Asignados/Agregar",asignarData);
