@@ -1,0 +1,18 @@
+<div class="back-imagen">
+    <div class="back-opacidad">
+        <div class="login-content">
+            <img src="../../assets/logo.svg" alt="">
+            <form [formGroup]="form" (ngSubmit)="cambiarPass()">
+                <label>ID Usuario:</label> <br>
+                <p>Digite el ID usuario registrado <br> para cambiar la contraseña</p>
+                <input type="text" formControlName="idUsuarios" placeholder="ID de usuario" name="correo"> <br>
+                <label>Contraseña:</label> <br>
+                <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo"> <br>
+                <button>Ingresar</button>
+            </form>
+            <div class="links">
+                <a href="/login">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
