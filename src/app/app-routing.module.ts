@@ -7,11 +7,13 @@ import { UpdateComponentComponent } from './home-compoment/update-component/upda
 import { RegistroComponent } from './registro/registro.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
+import { ContrasenaComponent } from './contrasena/contrasena.component';
 
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
   {path:'registro-Usuario', component:RegistroComponent},
+  {path:'Olvidar-Contraseña', component:ContrasenaComponent},
   {path:'Boletin',component:RegistroAsignarComponent, canActivate:[AuthGuardService]},
   {path: 'AgregarDato', component:AddcompiladoComponent, canActivate:[AuthGuardService]},
   {path: 'AsignarData', component:AsingTaskComponent, canActivate:[AuthGuardService]},

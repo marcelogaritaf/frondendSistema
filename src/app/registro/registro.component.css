@@ -37,6 +37,12 @@
     flex-direction: column;
     margin-top: 15px;
 }
+.login-content form a{
+    color:#2196f3;
+}
+.login-content form a:hover{
+    color: blueviolet;
+}
 .login-content form input{
     padding: 12px;
     width: 400px;

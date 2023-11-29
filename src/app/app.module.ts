@@ -30,6 +30,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AuthGuardService } from './Services/auth-guard.service';
 import { UpdateDesignadasComponent } from './designadas/update-designadas/update-designadas.component';
+import { ContrasenaComponent } from './contrasena/contrasena.component';
 
 const sistemaRoutes:Routes=[
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -55,6 +56,7 @@ const sistemaRoutes:Routes=[
     NavbarComponent,
     RegistroComponent,
     UpdateDesignadasComponent,
+    ContrasenaComponent,
 
   ],
   imports: [

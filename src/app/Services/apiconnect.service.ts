@@ -60,6 +60,9 @@ export class ApiconnectService {
   updateData(idProductos:number, data:any):Observable<any>{
     return this.http.put<any>(this.AppUrl+"api/Compilado/Editar",data);
   }
+  updatePASS(idUsuarios:number, data:any):Observable<any>{
+    return this.http.put<any>(this.AppUrl+"api/Usuario/Editar",data);
+  }
   getData$(): Observable<any>{
     return this.actulizarData.asObservable();
   }
