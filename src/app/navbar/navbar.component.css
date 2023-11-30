@@ -36,6 +36,20 @@
     cursor: pointer;
     font-size: 15px;
 }
+.lista li a{
+    text-decoration: none;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    color: rgb(217, 249, 249);
+    transition:all 0.3s ease-in, box-shadow 0.5s ease-in-out;
+    cursor: pointer;
+    font-size: 15px;
+}
+.lista li a:hover{
+    color: rgba(16, 79, 103, 0.767);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    letter-spacing: 4px;
+}
 .lista li button:hover{
     color: rgba(16, 79, 103, 0.767);
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
