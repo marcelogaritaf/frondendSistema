@@ -37,7 +37,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let dato of datos.response 
-            | filterBy:['codigoSubpartida']:this.filterData 
+            | filterBy:['codigoSubpartida','idCompilado']:this.filterData 
             | filterBy:['oficina']:this.filterData2 
             | filterBy:['estado']:this.filterData3">
                 <td>{{ dato.idCompilado }}</td>
