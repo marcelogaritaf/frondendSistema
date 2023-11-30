@@ -17,16 +17,26 @@ export class RegistroAsignarComponent {
       toEmail: ['',[Validators.required]],
       subject: ['',[Validators.required]],
       body: ['',[Validators.required]],
-      attachment: ['']
+      //attachment: ['']
     })
   }
   enviarCorreo(){
-    const formData=this.datos.getRawValue();
-    console.log(formData)
+    /*const formData = new FormData();
+    const formValues=this.datos.getRawValue();
+    formData.append('toEmail', formValues.toEmail);
+    formData.append('subject', formValues.subject);
+    formData.append('body', formValues.body);
+   // formData.append('attachment', formValues.attachment);*/
+   const formData:any={
+    toEmail:this.datos.get('toEmail')?.value,
+    subject:this.datos.get('subject')?.value,
+    body:this.datos.get('body')?.value,
+   }
+
     this.service.enviarCorreo(formData).subscribe(result=>{
-      this.toast.success('Correo Enviado','Correctamente')
-      console.log(result)
-    }, (error: HttpErrorResponse) => {
+      this.toast.success('Correo enviado con exito', 'Correo enviado');
+      this.datos.reset();
+    }, (error:HttpErrorResponse)=>{
       console.error('Error en la respuesta del servidor:', error.error);
       this.toast.error('Error al enviar el correo', 'Error');
     })

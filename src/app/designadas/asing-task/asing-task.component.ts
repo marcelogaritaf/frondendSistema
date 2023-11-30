@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ApiconnectService } from 'src/app/Services/apiconnect.service';
 
 @Component({
@@ -11,11 +12,12 @@ import { ApiconnectService } from 'src/app/Services/apiconnect.service';
 export class AsingTaskComponent implements OnInit{
   datos:FormGroup;
   respuest:any;
-  constructor(private http:HttpClient,private service:ApiconnectService){
-    this.datos=new FormGroup({
-      correo: new FormControl('',[Validators.required, Validators.email]),
-      asunto: new FormControl('Asignación de Compra',[Validators.required]),
-      mensaje: new FormControl('',[Validators.required]),
+  constructor(private http:HttpClient,private service:ApiconnectService, private formBuilder:FormBuilder,private toast:ToastrService){
+    this.datos = this.formBuilder.group({
+      toEmail: ['',[Validators.required]],
+      subject: ['',[Validators.required]],
+      body: ['',[Validators.required]],
+      //attachment: ['']
     })
   }
   ngOnInit(): void {
@@ -23,19 +25,24 @@ export class AsingTaskComponent implements OnInit{
       console.log(result)
       this.respuest= result
       this.datos.patchValue({
-        correo:this.respuest.oUsuarios.correoElectronico
+        toEmail:this.respuest.oUsuarios.correoElectronico
       })
     })
   }
   enviarCorreo(){
-    let params={
-      email:this.datos.value.correo,
-      asunto:this.datos.value.asunto,
-      mensaje:this.datos.value.mensaje,
-    }
-    console.log(params);
-    this.http.post('http://localhost:3000/envio',params).subscribe(resp=>{
-      console.log(resp)
-    })
+    const formData:any={
+      toEmail:this.datos.get('toEmail')?.value,
+      subject:this.datos.get('subject')?.value,
+      body:this.datos.get('body')?.value,
+     }
+  
+      this.service.enviarCorreo(formData).subscribe(result=>{
+        this.toast.success('Correo enviado con exito', 'Correo enviado');
+        this.datos.reset();
+      }, (error:HttpErrorResponse)=>{
+        console.error('Error en la respuesta del servidor:', error.error);
+        this.toast.error('Error al enviar el correo', 'Error');
+      })
+      console.log(this.datos)
   }
 }
