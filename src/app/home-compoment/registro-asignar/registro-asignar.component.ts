@@ -17,7 +17,7 @@ export class RegistroAsignarComponent {
       toEmail: ['',[Validators.required]],
       subject: ['',[Validators.required]],
       body: ['',[Validators.required]],
-      //attachment: ['']
+      attachment: ['']
     })
   }
   enviarCorreo(){
@@ -27,7 +27,7 @@ export class RegistroAsignarComponent {
     formData.append('subject', formValues.subject);
     formData.append('body', formValues.body);
    // formData.append('attachment', formValues.attachment);*/
-   const formData:any={
+    const formData:any={
     toEmail:this.datos.get('toEmail')?.value,
     subject:this.datos.get('subject')?.value,
     body:this.datos.get('body')?.value,

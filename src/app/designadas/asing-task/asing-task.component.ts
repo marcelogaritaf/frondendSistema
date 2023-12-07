@@ -15,7 +15,7 @@ export class AsingTaskComponent implements OnInit{
   constructor(private http:HttpClient,private service:ApiconnectService, private formBuilder:FormBuilder,private toast:ToastrService){
     this.datos = this.formBuilder.group({
       toEmail: ['',[Validators.required]],
-      subject: ['',[Validators.required]],
+      subject: ['Asignacion de compra',[Validators.required]],
       body: ['',[Validators.required]],
       //attachment: ['']
     })
