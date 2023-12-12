@@ -21,17 +21,26 @@ export class RegistroAsignarComponent {
     })
   }
   enviarCorreo(){
-    /*const formData = new FormData();
-    const formValues=this.datos.getRawValue();
+    const formData = new FormData();
+    /*const formValues=this.datos.getRawValue();
     formData.append('toEmail', formValues.toEmail);
     formData.append('subject', formValues.subject);
     formData.append('body', formValues.body);
    // formData.append('attachment', formValues.attachment);*/
-    const formData:any={
+    /*const formData:any={
     toEmail:this.datos.get('toEmail')?.value,
     subject:this.datos.get('subject')?.value,
     body:this.datos.get('body')?.value,
-   }
+   }*/
+   const formValues = this.datos.getRawValue();
+
+    formData.append('toEmail', formValues.toEmail);
+    formData.append('subject', formValues.subject);
+    formData.append('body', formValues.body);
+
+    if (formValues.attachment) {
+      formData.append('attachment', formValues.attachment.files[0]);
+    }
 
     this.service.enviarCorreo(formData).subscribe(result=>{
       this.toast.success('Correo enviado con exito', 'Correo enviado');
@@ -41,5 +50,9 @@ export class RegistroAsignarComponent {
       this.toast.error('Error al enviar el correo', 'Error');
     })
     console.log(this.datos)
+  }
+  onFileChange(event:any){
+    const fileInput = event.target;
+    this.datos.get('attachment')?.setValue(fileInput);
   }
 }
