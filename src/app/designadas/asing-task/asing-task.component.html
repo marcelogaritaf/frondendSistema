@@ -9,6 +9,11 @@
             <input type="text" name="Correo" id="asunto" placeholder="Asunto" formControlName="subject"><br>
             <label>Mensaje:</label><br>
             <textarea name="Correo" id="mensaje" placeholder="Mensaje" formControlName="body"></textarea><br>
+            <label>Adjuntar Archivo:</label> <br>
+            <div class="btn-adjuntar">
+                <p><i class="fa-solid fa-arrow-up-from-bracket"></i>Adjuntar</p>
+                <input type="file" id="archivo" placeholder="Adjuntar Archivo" (change)="onFileChange($event)" formControlName="attachment"><br>
+            </div>
             <button type="button" (click)="enviarCorreo()">Enviar</button>
         </form>
     </div>

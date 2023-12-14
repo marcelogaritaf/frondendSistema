@@ -34,7 +34,7 @@
     cursor: pointer;
     transition: all 0.7s ease-out;
 }
-.form-container .form .btn-adjuntar:hover{
+.form-container .form form .btn-adjuntar:hover{
     background-color: rgba(16, 18, 55, 0.801);
     color: rgba(255, 255, 255, 0.609);
 }
@@ -43,7 +43,7 @@
     text-align: center;
     margin-top: 20px;
 }
-.form-container .form #archivo{
+.form-container .form form #archivo{
    opacity: 0;
    position: absolute;
    top: 0;

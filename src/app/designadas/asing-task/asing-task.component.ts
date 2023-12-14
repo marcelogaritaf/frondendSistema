@@ -17,7 +17,7 @@ export class AsingTaskComponent implements OnInit{
       toEmail: ['',[Validators.required]],
       subject: ['Asignacion de compra',[Validators.required]],
       body: ['',[Validators.required]],
-      //attachment: ['']
+      attachment: ['']
     })
   }
   ngOnInit(): void {
@@ -30,19 +30,26 @@ export class AsingTaskComponent implements OnInit{
     })
   }
   enviarCorreo(){
-    const formData:any={
-      toEmail:this.datos.get('toEmail')?.value,
-      subject:this.datos.get('subject')?.value,
-      body:this.datos.get('body')?.value,
-     }
-  
-      this.service.enviarCorreo(formData).subscribe(result=>{
-        this.toast.success('Correo enviado con exito', 'Correo enviado');
-        this.datos.reset();
-      }, (error:HttpErrorResponse)=>{
-        console.error('Error en la respuesta del servidor:', error.error);
-        this.toast.error('Error al enviar el correo', 'Error');
-      })
-      console.log(this.datos)
+    const formData = new FormData();
+    const formValues = this.datos.getRawValue();
+    formData.append('toEmail', formValues.toEmail);
+    formData.append('subject', formValues.subject);
+    formData.append('body', formValues.body);
+    if (formValues.attachment) {
+      formData.append('attachment', formValues.attachment.files[0]);
+    }
+
+    this.service.enviarCorreo(formData).subscribe(result=>{
+      this.toast.success('Correo enviado con exito', 'Correo enviado');
+      this.datos.reset();
+    }, (error:HttpErrorResponse)=>{
+      console.error('Error en la respuesta del servidor:', error.error);
+      this.toast.error('Error al enviar el correo', 'Error');
+    })
+    console.log(this.datos)
+  }
+  onFileChange(event:any){
+    const fileInput = event.target;
+    this.datos.get('attachment')?.setValue(fileInput);
   }
 }
