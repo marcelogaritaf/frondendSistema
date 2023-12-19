@@ -4,13 +4,13 @@
             <img src="../../assets/logo2.png" alt="">
             <form [formGroup]="form" (ngSubmit)="registrarUser()">
                 <label>Nombre Completo:</label> <br>
-                <input type="text" formControlName="nombreCompleto" placeholder="Nombre Completo" name="correo"> <br>
+                <input type="text" formControlName="nombreCompleto" placeholder="Nombre Completo" name="correo" autocomplete="off"> <br>
                 <label>Correo Electronico:</label> <br>
-                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo"> <br>
+                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo" autocomplete="off"> <br>
                 <label>Oficina:</label> <br>
-                <input type="text" formControlName="Oficina" placeholder="Nombre de oficina" name="correo"> <br>
+                <input type="text" formControlName="Oficina" placeholder="Nombre de oficina" name="correo" autocomplete="off"> <br>
                 <label>Contraseña:</label> <br>
-                <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo"> <br>
+                <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo" autocomplete="off"> <br>
                 <button>Registrar</button>
                 <a href="/login">Iniciar Sesión</a>
             </form>

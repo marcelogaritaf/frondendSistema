@@ -4,14 +4,14 @@
             <img src="../../assets/logo.svg" alt="">
             <form [formGroup]="form" (ngSubmit)="login()">
                 <label>Correo Electronico:</label> <br>
-                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo"> <br>
+                <input type="text" formControlName="correoElectronico" placeholder="Correo Electronico" name="correo" autocomplete="off"> <br>
                 <label>Contraseña:</label> <br>
                 <input type="password" formControlName="Contrasena" placeholder="Contraseña" name="correo"> <br>
                 <button>Ingresar</button>
             </form>
             <div class="links">
                 <a href="/registro-Usuario">Registrar Usuario | </a>
-                <a class="ref-contrasena" href="/Olvidar-Contraseña"> ¿Olvido Contraseña?</a>
+                <a class="ref-contrasena" href="/Olvidar-Contraseña"> ¿Olvidó Contraseña?</a>
             </div>
         </div>
     </div>
